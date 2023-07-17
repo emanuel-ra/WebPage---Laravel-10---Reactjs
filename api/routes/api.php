@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\V1\Auth\AuthController;
+use App\Http\Controllers\V1\Web\ProductController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,11 +18,10 @@ use App\Http\Controllers\V1\Auth\AuthController;
 
 
 Route::prefix('v1')->group(function () {
-    Route::group([
 
+    Route::group([
         'middleware' => 'api',
-        'prefix' => 'auth'
-    
+        'prefix' => 'auth'    
     ], function ($router) {
     
         Route::post('login', [AuthController::class, 'login']);
@@ -30,6 +30,13 @@ Route::prefix('v1')->group(function () {
         Route::post('me', [AuthController::class, 'me']);
     
     });
+
+    Route::group([
+        'prefix' => 'products'    
+    ], function ($router) {    
+        Route::get('get', [ProductController::class, 'Get']);    
+    });
+
 });
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) { return $request->user(); });
