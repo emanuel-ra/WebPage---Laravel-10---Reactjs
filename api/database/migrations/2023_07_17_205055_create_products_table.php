@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('sku');
             $table->string('name');
+            $table->text('description');
             $table->string('image');            
             $table->decimal('price', $precision = 8, $scale = 2);
             $table->decimal('price_wholesale', $precision = 8, $scale = 2);
@@ -29,6 +30,8 @@ return new class extends Migration
             $table->unsignedBigInteger('brand_id');            
 
             $table->timestamps();
+
+            $table->foreign('brand_id')->references('id')->on('brands');
         });
     }
 
