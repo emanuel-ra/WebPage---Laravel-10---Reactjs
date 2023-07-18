@@ -23,10 +23,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function Get()
+    public function Get($page)
     {
-        $lst = Products::where('disabled',0)->get();
+        $lst = Products::where('disabled',0)->paginate(20);
 
-        return Response()->json(['data'=>$lst],200);
+        return Response()->json($lst,200);
     }
 }
