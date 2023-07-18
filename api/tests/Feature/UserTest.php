@@ -18,7 +18,7 @@ class UserTest extends TestCase
     public function test_user_route_login(): void
     {      
         $baseUrl = '/api/v1/auth/login';     
-        $email = "ward.ciara@example.net";
+        $email = "test@example.com";
         $password = "password";
        
         $response = $this->json('POST', $baseUrl . '/', [
@@ -41,7 +41,7 @@ class UserTest extends TestCase
     public function test_wrong_password_user_route_login(): void
     {      
         $baseUrl = '/api/v1/auth/login';     
-        $email = "ward.ciara@example.net";
+        $email = "test@example.com";
         $password = "abcd";
        
         $response = $this->json('POST', $baseUrl . '/', [
