@@ -13,10 +13,10 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create(["name"=>"Bocinas","parent_id"=>null,"disabled"=>1]);
-        Category::create(["name"=>"Almacenamiento","parent_id"=>null,"disabled"=>1]);
-        Category::create(["name"=>"Hogar","parent_id"=>null,"disabled"=>1]);
-        Category::create(["name"=>"Iluminación","parent_id"=>null,"disabled"=>1]);
-        Category::create(["name"=>"Cámaras de Vigilancia","parent_id"=>null,"disabled"=>1]);
+        Category::create(["name"=>"Bocinas","parent_id"=>null,"disabled"=>0]);
+        Category::create(["name"=>"Almacenamiento","parent_id"=>null,"disabled"=>0]);
+        Category::create(["name"=>"Hogar","parent_id"=>null,"disabled"=>0]);
+        Category::create(["name"=>"Iluminación","parent_id"=>null,"disabled"=>0]);
+        Category::create(["name"=>"Cámaras de Vigilancia","parent_id"=>null,"disabled"=>0]);
     }
 }

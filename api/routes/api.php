@@ -34,7 +34,7 @@ Route::prefix('v1')->group(function () {
     Route::group([
         'prefix' => 'products'    
     ], function ($router) {    
-        Route::get('get/{page}', [ProductController::class, 'Get']);    
+        Route::get('get', [ProductController::class, 'Get']);    
     });
 
 });
