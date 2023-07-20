@@ -3,6 +3,7 @@ import Home from './Pages/Home';
 import Products from './Pages/Products';
 import { Routes, Route} from "react-router-dom";
 import Login from './Pages/Login';
+import Cart from './Pages/Cart';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="returns" element={<h1>returns</h1>} />
           <Route path="selling-policies" element={<h1>selling policies</h1>} />
           <Route path="invoices" element={<h1>invoices</h1>} />
+          <Route path="cart" element={<Cart />} />
 
           {/* <Route path="dashboard" element={<Dashboard />} /> */}
 
