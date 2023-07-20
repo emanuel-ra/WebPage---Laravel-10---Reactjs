@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\V1\Auth\AuthController;
 use App\Http\Controllers\V1\Web\ProductController;
+use App\Http\Controllers\V1\Web\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,6 +36,12 @@ Route::prefix('v1')->group(function () {
         'prefix' => 'products'    
     ], function ($router) {    
         Route::get('get', [ProductController::class, 'Get']);    
+    });
+
+    Route::group([
+        'prefix' => 'categories'    
+    ], function ($router) {    
+        Route::get('get', [CategoryController::class, 'Get']);    
     });
 
 });
