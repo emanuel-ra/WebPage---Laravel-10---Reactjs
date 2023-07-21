@@ -25,7 +25,7 @@ class CategoryController extends Controller
      */
     public function Get()
     {
-        $lst = Category::where('disabled',0)->Get();        
+        $lst = Category::where('disabled',0)->where('parent_id',null)->with('children')->Get();        
        
         return Response()->json($lst,200);
     }
