@@ -10,12 +10,13 @@ export function useCategories(){
             const newCategories = await getCategories()
             setCategories(newCategories)
         }catch(e){
-            throw Error('Something went wrong in useCategories')
+            throw Error('Something went wrong in useCategories : '+e)
         }
     },[])
 
     const sorted = useMemo(() => {
-        return [...categories].sort((a, b) => a.name.localeCompare(b.name))
+        return [...categories].sort((a, b) => b.children.length-a.children.length)
+        //return [...categories].sort((a, b) => a.name.localeCompare(b.name))
         }, [categories])
 
     return { categories: sorted, getList }

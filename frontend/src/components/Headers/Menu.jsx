@@ -4,6 +4,7 @@ import { aboutUs } from "../../config/dropdowns";
 import { IconCart } from "../Utils/Icons";
 import { useCategories } from "../../hooks/useCategories";
 import { useEffect } from "react";
+import DropdownCategories from "./DropdownCategories";
 
 function Menu() {
     const { categories , getList } = useCategories()
@@ -55,7 +56,7 @@ function Menu() {
                     </li>
 
                     <li>
-                        <Dropdown text="Productos" options={categories} />
+                        <DropdownCategories text="Productos" options={categories} />
                     </li>
 
                     <li>

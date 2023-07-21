@@ -5,15 +5,25 @@ export const getCategories = async () => {
     try{
         const response = await fetch(`${API_URL}/categories/get`)
         const json = await response.json()
-
         return json?.map(d => ({
             id: d.id,
             name: d.name ,        
+            image: d.image ,
+            description: d.description ,
             target: `category/${d.id}` ,
-            key: `category_${d.id}` 
+            key: `category_${d.id}` ,
+            children: d.children?.map( c => ({
+                id: c.id,
+                name: c.name ,        
+                image: c.image ,
+                description: c.description ,
+                target: `category/${c.id}` ,
+                key: `category_${c.id}` ,
+            }))
         }))
 
-    } catch (e) {
-        throw new Error('Error searching movies')
+    } catch ({ name, message }) {
+        console.log(message)
+        throw new Error('Error')        
     }
 }

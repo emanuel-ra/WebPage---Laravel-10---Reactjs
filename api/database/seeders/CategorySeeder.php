@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
             // SUB CATEGORY
 
             $category = Category::factory()->create([
-                'name' => 'Bocina Portátil',
+                'name' => 'Bocinas',
                 'parent_id' => null ,
             ]);
 
