@@ -2,7 +2,6 @@
   deployment:
     tasks:
       - export DEPLOYPATH=/home/vivimxhome/public_html/
-      - export APIPATH=/home/vivimxhome/repositories/WebPage---Laravel-10---Reactjs/api
-      - export APPPATH=/home/vivimxhome/repositories/WebPage---Laravel-10---Reactjs/frontend/dist     
+      - export APIPATH=/home/vivimxhome/repositories/WebPage---Laravel-10---Reactjs/api          
       - /bin/cp -r $APIPATH $DEPLOYPATH
-      - /bin/cp -r $APPPATH $DEPLOYPATH      
+      - /bin/cp -r /home/vivimxhome/repositories/WebPage---Laravel-10---Reactjs/frontend/dist $DEPLOYPATH      
