@@ -55,7 +55,7 @@ function Menu() {
                     </li>
 
                     <li>
-                        <Dropdown text="Categorías" options={categories} />
+                        <Dropdown text="Productos" options={categories} />
                     </li>
 
                     <li>
