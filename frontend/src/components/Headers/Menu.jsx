@@ -2,8 +2,15 @@ import { NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import { aboutUs } from "../../config/dropdowns";
 import { IconCart } from "../Utils/Icons";
+import { useCategories } from "../../hooks/useCategories";
+import { useEffect } from "react";
 
 function Menu() {
+    const { categories , getList } = useCategories()
+
+    useEffect( ()=> {
+        getList()
+    },[getList])
   return (
     
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -48,11 +55,11 @@ function Menu() {
                     </li>
 
                     <li>
-                        <Dropdown text="Categorías" options={aboutUs} />
+                        <Dropdown text="Categorías" options={categories} />
                     </li>
 
                     <li>
-                        <Dropdown text="Nosotros" options={aboutUs} />
+                        {/* <Dropdown text="Nosotros" options={aboutUs} /> */}
                     </li>                  
                 </ul>
             </div>
