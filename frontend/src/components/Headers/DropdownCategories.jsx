@@ -25,7 +25,10 @@ function DropdownCategories(props) {
                         <ul className="space-y-4" aria-labelledby="menu-dropdown-button" key={`cat_ul${el.key}`}>
                             <li key={`cat_li_${el.key}`} className="flex items-center gap-1">
                                 <img src={el.image} className="w-14 h-auto" alt="" />
-                                <NavLink className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500" to={el.target} onClick={()=>setShow(!show)}>{el.name}</NavLink >
+                                {/* <NavLink className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500" to={el.target} onClick={()=>setShow(!show)}>{el.name}</NavLink > */}
+
+                                <NavLink className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500" to={`/products`} state={{ category_id: el.id }} onClick={()=>setShow(!show)}>{el.name}</NavLink>
+                                
                             </li>
                             <ul className="space-y-2">
                             {el.children.map( c => (

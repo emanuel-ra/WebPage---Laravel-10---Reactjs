@@ -24,9 +24,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function Get()
-    {
-        //$lst = Products::where('disabled',0)->paginate(20);
-        //$lst = Products::with('brand')->where('disabled',0)->paginate(20)->withQueryString();
+    {        
         $query = Products::query();
 
         $query = $query->where('disabled',0);    
@@ -35,6 +33,7 @@ class ProductController extends Controller
         $query->with('categories', function($query){ $query->select(['categories.name']); });
 
         $lst = $query->paginate(20); 
+        
         return Response()->json($lst,200);
     }
 }

@@ -14,7 +14,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           
-          <Route path="Products" element={<Products />} />
+          {/* <Route path="Products" element={<Products />} /> */}
+          <Route path="products">
+            <Route path=":category_id" element={<Products />} />
+          </Route>
+
 
 
           {/* About us dropdown */}

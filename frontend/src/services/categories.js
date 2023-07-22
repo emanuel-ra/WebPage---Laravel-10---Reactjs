@@ -10,14 +10,14 @@ export const getCategories = async () => {
             name: d.name ,        
             image: d.image ,
             description: d.description ,
-            target: `category/${d.id}` ,
+            target: `products/${d.id}` ,
             key: `category_${d.id}` ,
             children: d.children?.map( c => ({
                 id: c.id,
                 name: c.name ,        
                 image: c.image ,
                 description: c.description ,
-                target: `category/${c.id}` ,
+                target: `products/${c.id}` ,
                 key: `category_${c.id}` ,
             }))
         }))
